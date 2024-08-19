@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+/* Styles for Traffic Signal */
+.traffic-light {
+            width: 100px;
+            height: 300px;
+            background-color: black;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .light {
+            width: 80px;
+            height: 80px;
+            background-color: grey;
+            border-radius: 50%;
+            margin: 10px auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Red Light Animation */
+        .red {
+            animation: redLight 9s infinite;
+        }
+
+        @keyframes redLight {
+            0%, 33% {
+                background-color: red;
+            }
+            33.1%, 100% {
+                background-color: grey;
+            }
+        }
+
+        /* Yellow Light Animation */
+        .yellow {
+            animation: yellowLight 9s infinite;
+        }
+
+        @keyframes yellowLight {
+            33%, 66% {
+                background-color: yellow;
+            }
+            0%, 32.9%, 66.1%, 100% {
+                background-color: grey;
+            }
+        }
+
+        /* Green Light Animation */
+        .green {
+            animation: greenLight 9s infinite;
+        }
+
+        @keyframes greenLight {
+            66%, 100% {
+                background-color: green;
+            }
+            0%, 65.9% {
+                background-color: grey;
+            }
+        }
+
+        /* Crosswalk Animation */
+        .crosswalk {
+            width: 100%;
+            height: 100px;
+            background: repeating-linear-gradient(
+                90deg,
+                white,
+                white 10px,
+                black 10px,
+                black 20px
+            );
+            margin-top: 30px;
+            animation: crosswalkAnimate 3s linear infinite;
+        }
+
+        @keyframes crosswalkAnimate {
+            from {
+                background-position: 0;
+            }
+            to {
+                background-position: 20px;
+            }
+        }
+
+
+</style>
+<body>
+    <div class="traffic-light">
+        <div class="light red"></div>
+        <div class="light yellow"></div>
+        <div class="light green"></div>
+    </div>
+    
+    <div class="crosswalk"></div>
+    
+</body>
+</html>
